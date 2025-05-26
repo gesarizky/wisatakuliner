@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wisatakuliner/model/restaurant_place.dart';
 import 'package:wisatakuliner/widgets/favorite_button.dart';
 
+var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
+
 class DetailMobilePage extends StatelessWidget {
   final RestaurantPlace place;
 
@@ -21,19 +23,34 @@ class DetailMobilePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const FavoriteButton(),
-                  Text(
-                    place.name,
-                    style: Theme.of(context).textTheme.headlineSmall,
+                  Row(
+                    children: [
+                      const FavoriteButton(),
+                      Text(
+                        place.name,
+                        style: const TextStyle(
+                          fontSize: 30.0,
+                          fontFamily: 'Staatliches',
+                        ),
+                      ),
+                    ],
                   ),
+
                   const SizedBox(height: 8.0),
-                  Text(place.location),
+                  Text(place.location, style: informationTextStyle),
                   const SizedBox(height: 8.0),
-                  Text(place.openTime),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Icon(Icons.access_time),
+                      const SizedBox(width: 16.0),
+                      Text(place.openTime),
+                    ],
+                  ),
                   const SizedBox(height: 16.0),
-                  Text(place.description),
+                  Text(place.description, style: informationTextStyle),
                   const SizedBox(height: 16.0),
-                  Text("Menu:", style: Theme.of(context).textTheme.titleMedium),
+                  Text("Menu:", style: informationTextStyle),
                   const SizedBox(height: 8.0),
                   ...place.menu.map(
                     (item) => Text('${item.label} - ${item.price}'),

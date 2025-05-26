@@ -6,7 +6,7 @@ import 'package:wisatakuliner/widgets/detail_web_page.dart';
 class DetailScreen extends StatelessWidget {
   final RestaurantPlace place;
 
-  const DetailScreen({Key? key, required this.place}) : super(key: key);
+  const DetailScreen({super.key, required this.place});
 
   @override
   Widget build(BuildContext context) {

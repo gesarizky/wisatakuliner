@@ -3,7 +3,7 @@ import 'package:wisatakuliner/detail_screen.dart';
 import 'package:wisatakuliner/model/restaurant_place.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class MainScreen extends StatelessWidget {
 }
 
 class RestaurantPlaceList extends StatelessWidget {
-  const RestaurantPlaceList({Key? key}) : super(key: key);
+  const RestaurantPlaceList({super.key});
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -78,8 +78,7 @@ class RestaurantPlaceList extends StatelessWidget {
 class RestaurantPlaceGrid extends StatelessWidget {
   final int gridCount;
 
-  const RestaurantPlaceGrid({Key? key, required this.gridCount})
-    : super(key: key);
+  const RestaurantPlaceGrid({super.key, required this.gridCount});
 
   @override
   Widget build(BuildContext context) {

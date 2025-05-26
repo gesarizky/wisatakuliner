@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class FavoriteButton extends StatefulWidget {
-  const FavoriteButton({Key? key}) : super(key: key);
+  const FavoriteButton({super.key});
 
   @override
   _FavoriteButtonState createState() => _FavoriteButtonState();
